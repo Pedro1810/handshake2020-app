@@ -1,11 +1,17 @@
 <template>
 <view class='startPage'>
-  <touchable-opacity class='FindInvestorTap' v-bind:on-press="FindInvestor">
+  <image class="galochka" :source="require('../assets/galochka.png')" />
+  <touchable-opacity class='FindInvestorTap' v-bind:on-press="() => toReg('indInvestor')">
     <text class='FindInvestor'> Найти инвестора</text>
   </touchable-opacity>
-  <touchable-opacity class='FindStartupTap' v-bind:on-press="FindStartup">
+  <touchable-opacity class='FindStartupTap' v-bind:on-press="() => toReg('FindStartup')">
     <text class='FindStartup'> Найти стартап</text>
   </touchable-opacity>
+  <image class="xmark" :source="require('../assets/xmark.png')" />
+  <touchable-opacity class='selectScreen' v-bind:on-press="selectScreen">
+    <text class='selectScreenText'> Войти</text>
+  </touchable-opacity>
+
 </view>
 </template>
 
@@ -18,11 +24,11 @@ export default {
     }
   },
   methods: {
-    FindInvestor() {
-      console.log(2);
+    toReg(data) {
+      this.$emit('toReg', data)
     },
-    FindStartup() {
-      console.log(1);
+    selectScreen() {
+      this.$emit('selectScreen', 'login')
     }
   }
 };
@@ -53,5 +59,28 @@ export default {
 .FindStartupTap {
   justify-content: center;
   align-items: center;
+}
+
+.selectScreen {
+  position: absolute;
+  bottom: 20;
+  right: 10;
+}
+
+.selectScreenText {
+  font-size: 29px;
+  line-height: 44px;
+}
+
+.galochka {
+  position: absolute;
+  top: 60;
+  left: 10;
+}
+
+.xmark {
+  position: absolute;
+  bottom: 60;
+  right: 10;
 }
 </style>

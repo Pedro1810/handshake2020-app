@@ -1,14 +1,14 @@
 <template>
 <view class='login'>
+  <text class='MainTitleText'>Handshake2020</text>
   <text class='TitleText'>Вход</text>
-  <text-input class='input' placeholder='login' v-model="logintext" />
-  <text-input class='input' placeholder='password' v-model="regtext" />
+  <text-input class='input1' placeholder='Логин' v-model="logintext" />
+  <text-input class='input2' placeholder='Пароль' v-model="regtext" />
   <touchable-opacity class='LogIn' v-bind:on-press="FindStartup">
-    <text class='logintext'>Вход</text>
+    <text class='logintext'>Войти</text>
   </touchable-opacity>
 </view>
 </template>
-
 <!-- TitleText -->
 
 <script>
@@ -36,14 +36,33 @@ export default {
 </script>
 
 <style >
-.input {
+.MainTitleText {
+  position: absolute;
+  top: 38;
+  width: 300;
+  font-size: 38;
+}
+
+.input1 {
   background-color: #fff;
   height: 45;
-  margin-top: 8;
+  margin-top: 16;
   width: 300;
-  padding-left: 5;
+  padding-left: 13;
   border-color: #000;
-  border-width: 1;
+  border-width: 2;
+  border-radius: 15;
+  font-size: 20;
+}
+
+.input2 {
+  background-color: #fff;
+  height: 45;
+  margin-top: 26;
+  width: 300;
+  padding-left: 13;
+  border-color: #000;
+  border-width: 2;
   border-radius: 15;
   font-size: 20;
 }
@@ -63,10 +82,12 @@ export default {
 .logintext {
   font-size: 28;
   background-color: rgba(196, 196, 196, 0.5);
-  margin-top: 5;
+  margin-top: 18;
   border-radius: 15;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 27;
+  padding-right: 27;
+  padding-top: 5;
+  padding-bottom: 5;
 }
 
 

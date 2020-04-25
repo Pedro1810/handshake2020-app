@@ -1,13 +1,13 @@
 <template>
 <view class="container">
 
-  <start-page v-if='route == "startPage"' />
+  <start-page @selectScreen='selectScreen' @toReg='toReg' v-if='route == "startPage"' />
   <login v-if='route == "login"' />
-  <reg v-if='route == "reg"' />
+
+  <reg v-if='route == "reg"' :typeOfRegistration='typeOfRegistration' />
+
 </view>
 </template>
-
-
 
 <script>
 import StartPage from "./src/StartPage";
@@ -22,8 +22,21 @@ export default {
   },
   data: function() {
     return {
-      route: 'login'
+      route: 'startPage',
+      typeOfRegistration: ''
+
     };
+  },
+  methods: {
+    toReg(data) {
+      this.typeOfRegistration = data;
+      this.route = 'reg';
+
+      console.log('Тип регестрации: ' + data);
+    },
+    selectScreen(data) {
+      this.route = data;
+    }
   }
 
 };

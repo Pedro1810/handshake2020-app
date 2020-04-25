@@ -11,6 +11,7 @@
 
 <!-- TitleText -->
 
+
 <script>
 export default {
   props: {
@@ -35,7 +36,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 .input {
   background-color: #fff;
   height: 45;
