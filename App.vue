@@ -1,12 +1,9 @@
 <template>
 <view class="container">
-  <!--
-    Now we provide each todo-item with the todo object
-    it's representing, so that its content can be dynamic.
-    We also need to provide each component with a "key",
-    which will be explained later.
-  -->
-  <start-page class="text-container" :route='route' />
+
+  <start-page v-if='route == "startPage"' />
+  <login v-if='route == "login"' />
+  <reg v-if='route == "reg"' />
 </view>
 </template>
 
@@ -14,14 +11,18 @@
 
 <script>
 import StartPage from "./src/StartPage";
+import login from "./src/Login";
+import reg from "./src/Reg";
 
 export default {
   components: {
-    StartPage
+    StartPage,
+    login,
+    reg
   },
   data: function() {
     return {
-      route: 'StartPage'
+      route: 'login'
     };
   }
 

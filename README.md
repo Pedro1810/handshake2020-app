@@ -2,10 +2,17 @@
 
 > мобильно приложение для хакатона yohack
 
-для установки:
+Если у вас нет yarn'а то его можно поставить командой:
+```
+npm install yarn –global
+```
 
 ```
-npm install
+git clone https://github.com/nik19ta/handshake2020-app.git
 
-npm start
+cd handshake2020-app
+
+yarn
+
+expo start
 ```
